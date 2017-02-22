@@ -1,0 +1,7 @@
+api_homepage:
+    path:     /
+    defaults: { _controller: ApiBundle:Default:index }
+
+api_login:
+    path:     /api-login
+    defaults: { _controller: ApiBundle:Default:login}
