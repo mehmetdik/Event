@@ -36,7 +36,7 @@ class DefaultController extends Controller
             if (!$isValid) {
                 $result=204;
                 $array=array(
-                    "sonuc"=>$result,
+                    "result"=>$result,
                     "email"=>$user->getEmail(),
                 );
             }
@@ -45,7 +45,7 @@ class DefaultController extends Controller
         if($result!=204)
         {
             $array=array(
-                "sonuc"=>$result,
+                "result"=>$result,
             );
         }
 
@@ -55,5 +55,41 @@ class DefaultController extends Controller
 
     }
 
+    public function userAction(Request $request)
+    {
+        $email=$request->request->get("email");
+        $user=$this->getDoctrine()->getRepository("UserBundle:User")->findOneBy(array("email"=>$email));
+
+        $resultsArray["user"]=array();
+        $result=200;
+
+        if ($user === null) {  $result=401;  }
+
+        if($result==200)
+        {
+            $array=array(
+                "result"=>$result,
+                "email"=>$email,
+                "firstName"=>$user->getFirstName(),
+                "surName"=>$user->getSurName(),
+                "phone"=>$user->getPhone(),
+                "photo"=>$user->getPhoto(),
+                "jobTitle"=>$user->getJobTitle(),
+                "webSite"=>$user->getWebSite(),
+                "gender"=>$user->getGender(),
+                "age"=>$user->getAge()
+            );
+        }else{
+            $array=array(
+                "result"=>$result,
+            );
+        }
+
+        array_push($resultsArray["user"], $array);
+        return new Response( json_encode($resultsArray));
+
+
+
+    }
 
 }
