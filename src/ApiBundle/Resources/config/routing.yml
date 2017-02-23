@@ -5,3 +5,7 @@ api_homepage:
 api_login:
     path:     /api-login
     defaults: { _controller: ApiBundle:Default:login}
+
+api_user:
+    path:     /api-user
+    defaults: { _controller: ApiBundle:Default:user}
