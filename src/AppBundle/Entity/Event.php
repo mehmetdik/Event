@@ -105,6 +105,12 @@ class Event
      */
     private $capacity;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="\UserBundle\Entity\User", inversedBy="event")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
 
     /**
      * Get id
@@ -402,6 +408,30 @@ class Event
     public function getCapacity()
     {
         return $this->capacity;
+    }
+
+
+    /**
+     * Set user
+     *
+     * @param \UserBundle\Entity\User $user
+     * @return Event
+     */
+    public function setUser(\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
 
