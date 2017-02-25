@@ -28,6 +28,11 @@ class Category
      */
     private $categoryName;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserCategory", mappedBy="Category")
+     */
+    private $userCategory;
+
 
     /**
      * Get id
@@ -61,6 +66,45 @@ class Category
     public function getCategoryName()
     {
         return $this->categoryName;
+    }
+
+
+
+
+
+
+
+    /**
+     * Add userCategory
+     *
+     * @param \AppBundle\Entity\UserCategory $userCategory
+     * @return Category
+     */
+    public function addUserCategory(\AppBundle\Entity\UserCategory $userCategory)
+    {
+        $this->userCategory[] = $userCategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove userCategory
+     *
+     * @param \AppBundle\Entity\UserCategory $userCategory
+     */
+    public function removeUserCategory(\AppBundle\Entity\UserCategory $userCategory)
+    {
+        $this->userCategory->removeElement($userCategory);
+    }
+
+    /**
+     * Get userCategory
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserCategory()
+    {
+        return $this->userCategory;
     }
 }
 

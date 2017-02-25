@@ -92,4 +92,12 @@ class DefaultController extends Controller
 
     }
 
+    public function mainPageEventAciton(Request $request)
+    {
+        $cityid=$request->request->get("cityid");
+        $userid=$request->request->get("userid");
+
+
+    }
+
 }

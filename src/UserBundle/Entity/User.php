@@ -75,11 +75,24 @@ class User extends BaseUser
      */
     private $photo;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Event", mappedBy="User")
+     */
+    private $event;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserCategory", mappedBy="User")
+     */
+    private $userCategory;
+
+
+
 
     public function __construct()
     {
         parent::__construct();
         // your own logic
+
     }
 
 
@@ -301,6 +314,86 @@ class User extends BaseUser
     public function getPhoto()
     {
         return $this->photo;
+    }
+
+
+
+
+
+
+
+    /**
+     * Add event
+     *
+     * @param \AppBundle\Entity\Event $event
+     * @return User
+     */
+    public function addEvent(\AppBundle\Entity\Event $event)
+    {
+        $this->event[] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Remove event
+     *
+     * @param \AppBundle\Entity\Event $event
+     */
+    public function removeEvent(\AppBundle\Entity\Event $event)
+    {
+        $this->event->removeElement($event);
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+
+
+
+
+
+
+
+
+
+    /**
+     * Add userCategory
+     *
+     * @param \AppBundle\Entity\UserCategory $userCategory
+     * @return User
+     */
+    public function addUserCategory(\AppBundle\Entity\UserCategory $userCategory)
+    {
+        $this->userCategory[] = $userCategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove userCategory
+     *
+     * @param \AppBundle\Entity\UserCategory $userCategory
+     */
+    public function removeUserCategory(\AppBundle\Entity\UserCategory $userCategory)
+    {
+        $this->event->removeElement($userCategory);
+    }
+
+    /**
+     * Get userCategory
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserCategory()
+    {
+        return $this->userCategory;
     }
 
 
