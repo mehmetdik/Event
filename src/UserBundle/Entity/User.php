@@ -85,6 +85,11 @@ class User extends BaseUser
      */
     private $userCategory;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EventStatus", mappedBy="user")
+     */
+    private $eventstatus;
+
 
 
 
@@ -394,6 +399,42 @@ class User extends BaseUser
     public function getUserCategory()
     {
         return $this->userCategory;
+    }
+
+
+
+
+    /**
+     * Add eventstatus
+     *
+     * @param \AppBundle\Entity\EventStatus $eventstatus
+     * @return User
+     */
+    public function addEventstatus(\AppBundle\Entity\EventStatus $eventstatus)
+    {
+        $this->eventstatus[] = $eventstatus;
+
+        return $this;
+    }
+
+    /**
+     * Remove eventstatus
+     *
+     * @param \AppBundle\Entity\EventStatus $eventstatus
+     */
+    public function removeEventstatus(\AppBundle\Entity\EventStatus $eventstatus)
+    {
+        $this->eventstatus->removeElement($eventstatus);
+    }
+
+    /**
+     * Get eventstatus
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEventstatus()
+    {
+        return $this->eventstatus;
     }
 
 

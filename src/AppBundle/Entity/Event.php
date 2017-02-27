@@ -120,6 +120,11 @@ class Event
      */
     private $category;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EventStatus", mappedBy="event")
+     */
+    private $eventstatus;
+
 
 
 
@@ -486,6 +491,46 @@ class Event
     public function getCategory()
     {
         return $this->category;
+    }
+
+
+
+
+
+
+
+
+    /**
+     * Add eventstatus
+     *
+     * @param \AppBundle\Entity\EventStatus $eventstatus
+     * @return Event
+     */
+    public function addEventstatus(\AppBundle\Entity\EventStatus $eventstatus)
+    {
+        $this->eventstatus[] = $eventstatus;
+
+        return $this;
+    }
+
+    /**
+     * Remove eventstatus
+     *
+     * @param \AppBundle\Entity\EventStatus $eventstatus
+     */
+    public function removeEventstatus(\AppBundle\Entity\EventStatus $eventstatus)
+    {
+        $this->eventstatus->removeElement($eventstatus);
+    }
+
+    /**
+     * Get eventstatus
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEventstatus()
+    {
+        return $this->eventstatus;
     }
 }
 
