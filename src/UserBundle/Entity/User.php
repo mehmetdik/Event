@@ -76,12 +76,12 @@ class User extends BaseUser
     private $photo;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Event", mappedBy="User")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Event", mappedBy="user")
      */
     private $event;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserCategory", mappedBy="User")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserCategory", mappedBy="user")
      */
     private $userCategory;
 

@@ -35,12 +35,7 @@ class Event
      */
     private $address;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="city", type="string", length=255)
-     */
-    private $city;
+
 
     /**
      * @var \DateTime
@@ -112,6 +107,22 @@ class Event
     private $user;
 
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\City", inversedBy="event")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     */
+    private $city;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Category", inversedBy="event")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
+
+
+
+
     /**
      * Get id
      *
@@ -170,29 +181,6 @@ class Event
         return $this->address;
     }
 
-    /**
-     * Set city
-     *
-     * @param string $city
-     *
-     * @return Event
-     */
-    public function setCity($city)
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    /**
-     * Get city
-     *
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->city;
-    }
 
     /**
      * Set startDate
@@ -432,6 +420,72 @@ class Event
     public function getUser()
     {
         return $this->user;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Set city
+     *
+     * @param \AppBundle\Entity\City $city
+     * @return Event
+     */
+    public function setCity(\AppBundle\Entity\City $city= null)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return \AppBundle\Entity\City
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+
+
+
+
+
+    /**
+     * Set category
+     *
+     * @param \AppBundle\Entity\Category $category
+     * @return Event
+     */
+    public function setCategory(\AppBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \AppBundle\Entity\Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }
 

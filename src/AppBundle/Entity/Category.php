@@ -29,9 +29,15 @@ class Category
     private $categoryName;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserCategory", mappedBy="Category")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserCategory", mappedBy="category")
      */
     private $userCategory;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Event", mappedBy="category")
+     */
+    private $event;
 
 
     /**
@@ -106,5 +112,51 @@ class Category
     {
         return $this->userCategory;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Add event
+     *
+     * @param \AppBundle\Entity\Event $event
+     * @return Category
+     */
+    public function addEvent(\AppBundle\Entity\Event $event)
+    {
+        $this->event[] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Remove event
+     *
+     * @param \AppBundle\Entity\Event $event
+     */
+    public function removeEvent(\AppBundle\Entity\Event $event)
+    {
+        $this->event->removeElement($event);
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+
+
 }
 

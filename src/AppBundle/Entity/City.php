@@ -28,6 +28,11 @@ class City
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Event", mappedBy="city")
+     */
+    private $event;
+
 
     /**
      * Get id
@@ -62,5 +67,43 @@ class City
     {
         return $this->name;
     }
+
+
+
+
+
+    /**
+     * Add event
+     *
+     * @param \AppBundle\Entity\Event $event
+     * @return City
+     */
+    public function addEvent(\AppBundle\Entity\Event $event)
+    {
+        $this->event[] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Remove event
+     *
+     * @param \AppBundle\Entity\Event $event
+     */
+    public function removeEvent(\AppBundle\Entity\Event $event)
+    {
+        $this->event->removeElement($event);
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+
 }
 

@@ -9,3 +9,23 @@ api_login:
 api_user:
     path:     /api-user
     defaults: { _controller: ApiBundle:Default:user}
+
+api_mainPageEvent:
+    path:     /api-mainPageEvent
+    defaults: { _controller: ApiBundle:Default:mainPageEvent}
+
+api_createEvent:
+    path:     /api-createEvent
+    defaults: { _controller: ApiBundle:Default:createEvent}
+
+api_city:
+    path:     /api-city
+    defaults: { _controller: ApiBundle:Default:city}
+
+api_category:
+    path:     /api-category
+    defaults: { _controller: ApiBundle:Default:category}
+
+api_eventInfo:
+    path:     /api-eventInfo
+    defaults: { _controller: ApiBundle:Default:eventInfo}
