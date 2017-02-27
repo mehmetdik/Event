@@ -3,6 +3,7 @@
 namespace ApiBundle\Controller;
 
 use AppBundle\Entity\Event;
+use AppBundle\Entity\EventStatus;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -305,6 +306,48 @@ class DefaultController extends Controller
         }
 
         array_push($resultsArray["eventInfo"], $array);
+        return new Response( json_encode($resultsArray));
+    }
+
+    public function goToEventAction(Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $userid=$request->request->get("userid");
+        $eventid=$request->request->get("eventid");
+        $status=$request->request->get("status");
+        $resultsArray["goToEvent"]=array();
+        $result=401;
+
+        $user=$this->getDoctrine()->getRepository("UserBundle:User")->find($userid);
+        $event=$this->getDoctrine()->getRepository("AppBundle:Event")->find($eventid);
+
+        $eventStatus=$this->getDoctrine()->getRepository("")->findOneBy(array("user"=>$user,"event"=>$event));
+
+        if($eventStatus === null)
+        {
+            $result=200;
+
+
+            $evntStt=new EventStatus();
+            $evntStt->setUser($user);
+            $evntStt->setEvent($event);
+            $evntStt->setStatus($status);
+
+            $em->persist($evntStt);
+            $em->flush();
+
+        }else{
+                $result=200;
+               $eventStatus->setStatus($status);
+               $em->persist($eventStatus);
+               $em->flush();
+        }
+
+        $array=array(
+            "result"=>$result,
+        );
+
+        array_push($resultsArray["goToEvent"], $array);
         return new Response( json_encode($resultsArray));
     }
 

@@ -29,3 +29,7 @@ api_category:
 api_eventInfo:
     path:     /api-eventInfo
     defaults: { _controller: ApiBundle:Default:eventInfo}
+
+api_goToEvent:
+    path:     /api-goToEvent
+    defaults: { _controller: ApiBundle:Default:goToEvent}
