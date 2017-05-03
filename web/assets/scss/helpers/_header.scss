@@ -1,0 +1,272 @@
+.navigation { @include box-shadow(0px 1px 2px rgba(0,0,0,.15)); background-color: #fff; position: relative; width: 100%; z-index: 99; top: 0;
+  &:hover {
+    .secondary-navigation { @include opacity(1); }
+  }
+  .navbar-collapse { padding-right: 0; }
+  .navbar { border: none; margin-bottom: 0; min-height: inherit; padding: 0; display: table; width: 100%; height: 70px;
+	>.container{ position: relative; }
+    .collapse { display: table-cell !important; vertical-align: middle; float: none !important; }
+    .navbar-brand { height: inherit; line-height: 0; 
+	&.logo.retina { display:none; }
+	}
+	.slide-left {
+		right: 15px;
+		top: 0;
+		padding: 0;
+		box-shadow: none;
+		border: none;
+	}
+	a.drop-left { @include opacity(1); color: #35393B; line-height: 0; margin: 0; padding: 35px 35px 32px 50px; position: relative; text-transform: uppercase; font-weight: bold; border-top: 0px solid #fff;}
+	a.drop-close { @extend .drop-left; margin-top: 10px; z-index: 3;}
+	.gamb-button{  position: relative; right: 5px; height: 0; }
+	.icon-bar {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 4px;
+		background: #333333;
+		height: 2px;
+		width: 20px;
+		border-radius: 2px;
+		position: relative;
+		top: -7px;
+		left: 50px;
+		&:nth-child(2) {
+		width: 14px;
+		left: 53px;
+		}
+		&:nth-child(3) {
+		width: 16px;
+		left: 52px;
+		}
+	}
+	.cross {
+		display: block;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 15px;
+		left: 70px;
+		transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			background: $main-text;
+		}
+		&:before {
+			left: 50%;
+			width: 10%;
+			margin-left: -5%;
+			height: 100%;
+		}
+		&:after {
+			top: 50%;
+			height: 10%;
+			margin-top: -5%;
+			width: 100%;
+		}
+	}
+    .navbar-nav { 
+    	float: right; 
+	    -webkit-transition: 0.1s ease-out;
+	    -moz-transition: 0.1s ease-out;
+	    transition: 0.1s ease-out; 
+	    position: relative;
+      > li {
+        &:hover {
+          > .child-navigation { @include opacity(1); visibility: visible;z-index:101;}
+        }
+        &.active {
+          a { background: none; }
+          .child-navigation {
+            a { color: $main-text;
+              &:after { display: none; }
+            }
+            li {
+              &:first-child {
+                a {
+                  &:after { display: block; }
+                }
+              }
+            }
+          }
+          .child-navigation {
+            &.position-bottom {
+              li {
+                &:last-child {
+                  a {
+                    &:after { display: block; }
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.has-child { position: relative;
+          &:after { @include font-awesome; content: "\f0d7"; color: $main-text; font-size: 12px; height: 10px; position: absolute; top: 0px; bottom: 0; margin: auto; right: 4px; }
+        }
+        a { @include opacity(1); color: #35393B; padding: 25px 16px; position: relative; text-transform: uppercase; font-weight: bold; border-top: 0px solid transparent;
+          &:after { @include opacity(0); @include transition(.2s); background-color: #000; bottom: -5px; content: ""; left: 16px; height: 1px; position: absolute; width: 10px; }
+          &:hover { @include opacity(1); background-color: transparent; }
+          &:active, &:focus { background-color: transparent; }
+        }
+        > .child-navigation { margin-top: 11px;
+          &.navigation-to-left { right: 15px; left: inherit;
+            > li {
+              &:first-child {
+                a {
+                  &:after { left: inherit; right: 10px; }
+                }
+              }
+            }
+            &.position-bottom {
+              > li {
+                &:last-child {
+                  a {
+                    &:after { left: inherit; right: 10px; }
+                  }
+                }
+              }
+            }
+          }
+          &.position-bottom { bottom: 25px;
+            > li {
+              &:first-child {
+                a {
+                  &:after { border-color: transparent !important; }
+                }
+              }
+              &:last-child {
+                &:hover {
+                  a {
+                    &:after { border-color: #000 transparent transparent transparent; }
+                  }
+                }
+                > a {
+                  &:after { @include opacity(1); background-color: transparent; border-color: #000 transparent transparent transparent; border-style: solid; border-width: 7.5px 7.5px 0 7.5px; content: ""; height: 0px; position: absolute; left: 10px; bottom: -7px; width: 0px; }
+                  &:before { @include opacity(1); background-color: transparent; content: ""; height: 8px; left: 0; width: 100%; position: absolute; bottom: -8px; }
+                }
+              }
+              .child-navigation { bottom: 0; margin-top: inherit; }
+            }
+          }
+          > li { position: relative;
+            &:first-child {
+              &:hover {
+                a {
+                  &:hover {
+                    &:after { border-color: transparent transparent #000 transparent; }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .child-navigation { @include opacity(0); @include transition(.2s); @include shadow; background-color: #fff; position: absolute; top: 50px; visibility: hidden; list-style: none; padding-left: 0; left: 15px; min-width: 240px; z-index: 100; border: 4px solid #fff; border-radius: 4px;
+          li {
+            &:hover {
+              .child-navigation { @include opacity(1); @include transition-delay(.2s); visibility: visible; }
+            }
+            a { display: block; padding: 10px; position: relative;
+              &:hover { @include shadow; background-color: #f5f6f8; }
+            }
+            .child-navigation { @include opacity(0); top: 0; left: 100%; }
+          }
+        }
+      }
+      li {
+        .child-navigation {
+          li {
+            &.has-child {
+              &:after {  @include opacity(1); @include font-awesome; background-color: transparent; color: #000; content: "\f105"; height: 14px; position: absolute; top: 0; bottom: 0; margin: auto;  left: inherit; right: 8px; width: 5px; z-index: 2; }
+              &:hover {
+                &:after { color: #fff; }
+              }
+            }
+          }
+        }
+      }
+    }
+	.site-header {
+		display: none;
+	}
+  }
+}
+@media screen and (max-width: 1024px){
+	.navigation {
+		.navbar {
+			>.container {
+				display: none;
+			}
+			.site-header {
+				display: block;								
+				.mob-menu {
+					position: absolute;	
+					width: 320px;
+					right: 0;
+					background-color: #fff;
+					.navbar-nav {
+						float: none;
+						margin: 0;
+						>li.active{
+							>a {
+								border: none;
+							}
+						}
+						>li, li, li:hover {
+							width: 100%;
+							z-index: 0;
+							a{
+								padding: 15px 40px 15px;
+							}
+							.child-navigation{
+								display: none;
+								opacity: 1;
+								visibility: visible;
+								position: relative;
+								top: 0;
+								width: 280px;
+								margin: 0;
+								box-shadow: none;
+								-moz-transition: 0s;
+								-o-transition: 0s;
+								-webkit-transition: 0s;
+								transition: 0s;
+								left: 15px;
+								a {
+									font-weight: normal;
+									text-transform: capitalize;
+									opacity: 1;
+									visibility: visible;
+								}
+							}
+							&.has-child:after {
+								margin: 15px auto;
+								right: 40px;
+								color: $main-text;
+								cursor: pointer;
+								z-index: -2;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	   only screen and (   min--moz-device-pixel-ratio: 2),
+	   only screen and (     -o-min-device-pixel-ratio: 2/1),
+	   only screen and (        min-device-pixel-ratio: 2),
+	   only screen and (                min-resolution: 192dpi),
+	   only screen and (                min-resolution: 2dppx) { 
+		.navigation .navbar .navbar-brand.logo	  	    {display: none;}
+		.navigation .navbar .navbar-brand.logo.retina  {display:block; margin:0 auto}
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) { 
+	.navigation .navbar .navbar-brand.logo  	     {display: none;}
+	.navigation .navbar .navbar-brand.logo.retina  {display:block; width:100%; margin:0 auto}
+} 

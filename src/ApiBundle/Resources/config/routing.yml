@@ -33,3 +33,23 @@ api_eventInfo:
 api_goToEvent:
     path:     /api-goToEvent
     defaults: { _controller: ApiBundle:Default:goToEvent}
+
+api_categoryPick:
+    path:     /api-categoryPick
+    defaults: { _controller: ApiBundle:Default:categoryPick}
+
+api_register:
+    path:     /api-register
+    defaults: { _controller: ApiBundle:Default:register}
+
+api_statusEvent:
+    path:     /api-statusEvent
+    defaults: { _controller: ApiBundle:Default:statusEvent}
+
+api_thisWeek:
+    path:     /api-thisWeek
+    defaults: { _controller: ApiBundle:Default:thisWeek}
+
+api_search:
+    path:     /api-search
+    defaults: { _controller: ApiBundle:Default:search}

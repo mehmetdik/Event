@@ -1,0 +1,61 @@
+/*
+Error: Undefined mixin 'box-shadow'.
+        on line 1 of /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/helpers/_header.scss, in `box-shadow'
+        from line 1 of /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/helpers/_header.scss
+
+1: .navigation { @include box-shadow(0px 1px 2px rgba(0,0,0,.15)); background-color: #fff; /*margin-bottom: 20px;*\/ position: relative; width: 100%; z-index: 99; top: 0;  //top: 0;
+2:   &:hover {
+3:     .secondary-navigation { @include opacity(1); }
+4:   }
+5:   .navbar-collapse { padding-right: 0; }
+6:   .navbar { border: none; margin-bottom: 0; min-height: inherit; padding: 30px 0; /**\/ display: table; width: 100%;
+
+Backtrace:
+/Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/helpers/_header.scss:1:in `box-shadow'
+/Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/helpers/_header.scss:1
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `block in with_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:98:in `with_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:336:in `visit_mixin'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:420:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:20:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/engine.rb:268:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:404:in `run'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:52:in `parse'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:19:in `parse!'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/bin/scss:13:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'box-shadow'.\A         on line 1 of /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/helpers/_header.scss, in `box-shadow'\A         from line 1 of /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/helpers/_header.scss\A \A 1: .navigation { @include box-shadow(0px 1px 2px rgba(0,0,0,.15)); background-color: #fff; /*margin-bottom: 20px;*/ position: relative; width: 100%; z-index: 99; top: 0;  //top: 0;\A 2:   &:hover {\A 3:     .secondary-navigation { @include opacity(1); }\A 4:   }\A 5:   .navbar-collapse { padding-right: 0; }\A 6:   .navbar { border: none; margin-bottom: 0; min-height: inherit; padding: 30px 0; /**/ display: table; width: 100%;"; }

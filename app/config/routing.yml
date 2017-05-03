@@ -12,3 +12,11 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+homepage:
+    path:     /homepage
+    defaults: { _controller: AppBundle:Default:homepage }
+
+appMain:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /

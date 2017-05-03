@@ -1,0 +1,68 @@
+/*
+Error: File to import not found or unreadable: compass/support.
+       Load paths:
+         /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/colors
+         Sass::Globbing::Importer
+        on line 3 of /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/compass/css3/_border-radius.scss
+        from line 7 of /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/colors/brown.scss
+
+1: $color-default: #998675;
+2: $color-default-darker: darken($color-default, 30%);
+3: $color-grey-dark: #2a2a2a;
+4: $color-grey-medium: #5a5a5a;
+5: $color-grey-light: #f3f3f3;
+6: 
+7: @import '../compass/css3/_border-radius';
+8: @import '../compass/css3/_box-shadow';
+
+Backtrace:
+/Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/compass/css3/_border-radius.scss:3
+/Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/colors/brown.scss:7
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:45:in `import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:315:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:88:in `block in with_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:88:in `with_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `map'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:20:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/engine.rb:268:in `render'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:404:in `run'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:52:in `parse'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:19:in `parse!'
+/Applications/CodeKit.app/Contents/Resources/engines/scss/bin/scss:13:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: compass/support.\A        Load paths:\A          /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/colors\A          Sass::Globbing::Importer\A         on line 3 of /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/compass/css3/_border-radius.scss\A         from line 7 of /Users/ilyapavlov/Downloads/themeforest-7873854-zoner-real-estate-html-template-custom-cms/html/assets/scss/colors/brown.scss\A \A 1: $color-default: #998675;\A 2: $color-default-darker: darken($color-default, 30%);\A 3: $color-grey-dark: #2a2a2a;\A 4: $color-grey-medium: #5a5a5a;\A 5: $color-grey-light: #f3f3f3;\A 6: \A 7: @import '../compass/css3/_border-radius';\A 8: @import '../compass/css3/_box-shadow';"; }

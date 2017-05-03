@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans Light RU'), local('KelsonSans-LightRU'), url('kelsonsanslightru.woff2') format('woff2'), url('kelsonsanslightru.woff') format('woff'), url('kelsonsanslightru.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans Regular RU'), local('KelsonSans-RegularRU'), url('kelsonsansregularru.woff2') format('woff2'), url('kelsonsansregularru.woff') format('woff'), url('kelsonsansregularru.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans Bold RU'), local('KelsonSans-BoldRU'), url('kelsonsansboldru.woff2') format('woff2'), url('kelsonsansboldru.woff') format('woff'), url('kelsonsansboldru.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

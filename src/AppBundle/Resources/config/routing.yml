@@ -1,0 +1,8 @@
+cityEvents:
+    path:     /city-events
+    defaults: { _controller: AppBundle:Default:cityEvents }
+
+mainRegister:
+    path:     /main-register
+    defaults: { _controller: AppBundle:Default:mainRegister }
+

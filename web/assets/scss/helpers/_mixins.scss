@@ -1,0 +1,65 @@
+@mixin font-awesome { @include text-shadow(none); -webkit-font-smoothing: antialiased; font-family: 'fontawesome'; speak: none; font-weight: normal; font-variant: normal; line-height: 1; text-transform: none; }
+
+@mixin shadow { @include box-shadow(0px 1px 1px rgba(0,0,0,.2)); }
+
+@mixin shadow-inner { @include box-shadow(inset 0px 1px 1px rgba(0,0,0,.2)); }
+
+@mixin home-page-gradient {
+  background-color: #1B1B1B;
+  background: -moz-linear-gradient(bottom, transparent 20%, rgba(0, 0, 0, 1) 88%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, transparent), color-stop(88%, rgba(0, 0, 0, 0.75)));
+  background: -webkit-linear-gradient(bottom, transparent 20%, rgba(0, 0, 0, 1) 88%); //safari
+  background: -o-linear-gradient(bottom, transparent 20%, rgba(0, 0, 0, 1) 88%);
+  background: -ms-linear-gradient(bottom, transparent 20%, rgba(0, 0, 0, 1) 88%);
+  background: linear-gradient(to top, transparent 20%, black 88%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+
+@mixin player-gradient {
+  background: #303030;
+  background: rgba(48,48,48,0.8);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(48,48,48,0.8)), to(rgba(48,48,48,0.8)));
+  background: -webkit-linear-gradient(top, rgba(48,48,48,0.8), rgba(48,48,48,0.8));
+  background: -moz-linear-gradient(top, rgba(48,48,48,0.8), rgba(48,48,48,0.8));
+  background: -o-linear-gradient(top, rgba(48,48,48,0.8), rgba(48,48,48,0.8));
+  background: -ms-linear-gradient(top, rgba(48,48,48,0.8), rgba(48,48,48,0.8));
+  background: linear-gradient(rgba(48,48,48,0.8), rgba(48,48,48,0.8));
+}
+
+@mixin overlay-gradient {
+  background: -webkit-linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: -o-linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation-name($name) {
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+  -ms-animation-name: $name;
+  animation-name: $name;
+}
+
+@mixin animation-duration($name) {
+  -webkit-animation-duration: $name;
+  -moz-animation-duration: $name;
+  -ms-animation-duration: $name;
+  animation-duration: $name;
+}

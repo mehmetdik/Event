@@ -1,0 +1,62 @@
+footer {
+	p, li, a, a:visited { font-size: 13px; color: #afb5b8;	}
+}
+#page-footer {
+	.inner { display: table; width: 100%; color: #dadada;
+		h3 { color: #fff; margin: 20px 0 13px; font-family: "Open Sans Condensed"; font-size: 20px; }
+		#footer-main { background-color: #1f2126; padding: 40px 0; }
+		#footer-copyright { background-color: #1b1d20; display: table; padding: 20px 0; width: 100%;
+			span { opacity: 0.5; line-height: 26px; }
+			.bank-logo { height: 25px; vertical-align: middle; margin-right: 7px; margin-left: 8px; }
+			
+		}
+		.property {
+			background-color: #24262a;
+			padding: 8px 6px;
+			margin-bottom: 8px;
+			&:last-child { margin-bottom: 0 !important; }
+			figure { opacity: 0.5; }
+		}
+		// Property thumbnail
+		.property-thumbnail { background-color: #1f2126; float: left; height: 54px; overflow: hidden; margin-right: 10px;
+			img { -moz-backface-visibility: hidden; -webkit-backface-visibility:hidden; height: 100%; }
+		}
+		.contact-us {
+			color: #afb5b8;
+			font-size: 13px;
+		}
+		ul.list-links li a {
+			display: inline-block;
+			padding-bottom: 5px;
+		}
+		a.mailto { color: $color-switched; }
+		.roll:after {
+			text-shadow: none;
+			-webkit-font-smoothing: antialiased;
+			font-family: 'fontawesome';
+			speak: none;
+			font-weight: normal;
+			font-variant: normal;
+			line-height: 1;
+			text-transform: none;
+			content: "\f0d8";
+			font-size: 14px;
+			padding-left: 5px;
+		}
+		a:hover, a:focus {
+			color: $color-switched;
+		}
+		#footer-copyright {
+			a {font-size: 14px;color: #dadada; opacity: 0.5;}
+			a:hover {font-size: 14px;color: $color-switched; opacity: 0.5;}
+		}
+	}
+}
+
+// Sticky footer
+
+body, html { height: 100%; margin: 0; }
+.wrapper { display: table; height: 100%; width: 100%; }
+#page-content { height: auto; }
+#page-footer { height: 1px; }
+@media (max-width: 767px) {	.wrapper, #page-footer { display: block; } }
